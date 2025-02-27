@@ -1,5 +1,5 @@
 program: main.c 
-	gcc main.c -o main.out
+	gcc main.c -o main.out -lm
 
 clean:
 	rm main
