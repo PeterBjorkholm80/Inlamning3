@@ -1,61 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-int main()
-{
-    // The Line below must *NOT* be changed or test will fail!
-    srand(1);
+/* ------- Solution starts here ----------*/
 
-    /* -- Solution from here -- */
+float calculate_hypotenuse(float a, float b){
+    float a2 = pow(a,2);
+    float b2 = pow(b,2);
+    float h = sqrt(a2+b2);
+    return h;
+}
 
-    // Create a variable to store values
-    int dice_rolls[100];
-    for (int i = 0; i < 100; i++){
-        dice_rolls[i] = (rand() % 6)+1;
-        // Check so we get rolls
-        //printf("roll: %d\n", dice_rolls[i]);
-    }
-    // Create a variable to store how many of each
-    int one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, sum = 0;
-    
-    for (int i = 0; i < 100; i++){
-        if (dice_rolls[i] == 1){
-            one++;
-        }
-        if (dice_rolls[i] == 2){
-            two++;
-        }
-        if (dice_rolls[i] == 3){
-            three++;
-        }
-        if (dice_rolls[i] == 4){
-            four++;
-        }
-        if (dice_rolls[i] == 5){
-            five++;
-        }
-        if (dice_rolls[i] == 6){
-            six++;
-        }
+/* ------- Solution ends here ------------*/
 
-        //Also add the number to the total sum
-        sum += dice_rolls[i];
-        
-    }
-   
-    printf("%d\n",one);
-    printf("%d\n",two);
-    printf("%d\n",three);
-    printf("%d\n",four);
-    printf("%d\n",five);
-    printf("%d\n",six);
-    printf("%d\n",sum);
-    float average = sum/100.0;
-    printf("%.1f", average);
+// This is where you add the function calculate_hypotenuse
 
-    /* -- Solution to here -- */
+int main() {
+    float a = 3.0;
+    float b = 4.0;
 
-    // Your code goes here
+    printf("%.2f\n", calculate_hypotenuse(a, b));  // Expected output: 5.00
+
+    //Changing the values
+    a = 5.0;
+    b = 12.0;
+
+    printf("%.2f\n", calculate_hypotenuse(a, b));  // Expected output: 13.00
 
     return 0;
 }
